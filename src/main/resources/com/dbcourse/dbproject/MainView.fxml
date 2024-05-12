@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <TableView prefHeight="400.0" prefWidth="600.0">
+            <columns>
+                <TableColumn prefWidth="120.0" text="Number of Type A Users" />
+                <TableColumn prefWidth="120.0" text="Number of Type B Users" />
+                <TableColumn prefWidth="120.0" text="Duration of Deadlocks (Type A)" />
+                <TableColumn prefWidth="120.0" text="Duration of Deadlocks (Type B)" />
+                <TableColumn prefWidth="120.0" text="Type A Threads Encountered by Type B Users" />
+                <TableColumn prefWidth="120.0" text="Type B Threads Encountered by Type A Users" />
+                <TableColumn prefWidth="120.0" text="Average Duration of Type A Users" />
+                <TableColumn prefWidth="120.0" text="Average Duration of Type B Users" />
+            </columns>
+        </TableView>
+    </children>
+</AnchorPane>
