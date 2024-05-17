@@ -1,6 +1,6 @@
 package com.dbcourse.dbproject;
 import javafx.beans.property.*;
-
+//TODO remove un necessary properties
 public class ResultData {
     private final IntegerProperty typeAUsers;
     private final IntegerProperty typeBUsers;

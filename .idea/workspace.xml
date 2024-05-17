@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="4212c10b-46d8-4130-9548-f1a11cbff44b" name="Changes" comment="ready for remote">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/dbcourse/dbproject/MainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/dbcourse/dbproject/MainView.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
