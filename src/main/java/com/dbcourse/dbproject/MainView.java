@@ -24,10 +24,8 @@ public class MainView {
     @FXML
     private void runButtonClick(ActionEvent event) {
         // Open dialog
-        Dialog<String> dialog = new Dialog<>();
-        dialog.setTitle("Run Dialog");
-        dialog.setContentText("This is a dialog opened when the Run button is clicked.");
-        dialog.showAndWait();
+        System.out.println("run");
+
     }
 
     private void loadDataFromDatabase() {

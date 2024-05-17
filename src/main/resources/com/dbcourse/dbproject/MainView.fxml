@@ -14,7 +14,7 @@
 <BorderPane fx:controller="com.dbcourse.dbproject.MainView" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
     <center>
         <ScrollPane fitToWidth="true" fitToHeight="true">
-            <VBox VBox.vgrow = "ALWAYS">
+            <VBox>
                 <!-- Input fields and button -->
                 <HBox spacing="10.0" alignment="CENTER_LEFT">
                     <Label text="Type A User:"/>
