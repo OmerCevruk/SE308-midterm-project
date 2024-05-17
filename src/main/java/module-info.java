@@ -7,6 +7,7 @@ module com.dbcourse.dbproject {
     requires com.dlsc.formsfx;
     requires net.synedra.validatorfx;
     requires org.kordamp.ikonli.javafx;
+    requires com.microsoft.sqlserver.jdbc;
 
     opens com.dbcourse.dbproject to javafx.fxml;
     exports com.dbcourse.dbproject;

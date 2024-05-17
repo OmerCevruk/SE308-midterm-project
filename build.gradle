@@ -36,6 +36,7 @@ javafx {
 
 dependencies {
   implementation('org.controlsfx:controlsfx:11.1.2')
+  implementation 'com.microsoft.sqlserver:mssql-jdbc:9.4.0.jre11'
   implementation('com.dlsc.formsfx:formsfx-core:11.6.0') {
     exclude(group: 'org.openjfx')
   }
