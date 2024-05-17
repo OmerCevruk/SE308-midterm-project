@@ -10,6 +10,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.control.cell.TextFieldTableCell?>
+
 
 <BorderPane fx:controller="com.dbcourse.dbproject.MainView" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
     <center>
@@ -30,48 +33,144 @@
                     <Label text="READ UNCOMMITTED" style="-fx-font-weight: bold;"/>
                     <TableView fx:id="readUncommittedTable" VBox.vgrow="ALWAYS">
                         <columns>
-                            <TableColumn prefWidth="240.0" text="Number of Type A Users"/>
-                            <TableColumn prefWidth="240.0" text="Number of Type B Users"/>
-                            <TableColumn prefWidth="240.0" text="Average Duration of Type A Users"/>
-                            <TableColumn prefWidth="240.0" text="Number of Deadlocks type a"/>
-                            <TableColumn prefWidth="240.0" text="Average Duration of Type B Users"/>
-                            <TableColumn prefWidth="240.0" text="Number of Deadlocks type b"/>
+                            <TableColumn prefWidth="240.0" text="Number of Type A Users">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="typeAUsers" />
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn prefWidth="240.0" text="Number of Type B Users">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="typeBUsers" />
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn prefWidth="240.0" text="Average Duration of Type A Users">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="avgDurationTypeA" />
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn prefWidth="240.0" text="Number of Deadlocks type a">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="typeADeadlocks" />
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn prefWidth="240.0" text="Average Duration of Type B Users">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="avgDurationTypeB" />
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn prefWidth="240.0" text="Number of Deadlocks type b">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="typeBDeadlocks" />
+                                </cellValueFactory>
+                            </TableColumn>
                         </columns>
                     </TableView>
 
                     <Label text="READ COMMITTED" style="-fx-font-weight: bold;"/>
                     <TableView fx:id="readCommittedTable" VBox.vgrow="ALWAYS">
                         <columns>
-                            <TableColumn prefWidth="240.0" text="Number of Type A Users"/>
-                            <TableColumn prefWidth="240.0" text="Number of Type B Users"/>
-                            <TableColumn prefWidth="240.0" text="Average Duration of Type A Users"/>
-                            <TableColumn prefWidth="240.0" text="Number of Deadlocks type a"/>
-                            <TableColumn prefWidth="240.0" text="Average Duration of Type B Users"/>
-                            <TableColumn prefWidth="240.0" text="Number of Deadlocks type b"/>
+                            <TableColumn prefWidth="240.0" text="Number of Type A Users">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="typeAUsers" />
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn prefWidth="240.0" text="Number of Type B Users">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="typeBUsers" />
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn prefWidth="240.0" text="Average Duration of Type A Users">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="avgDurationTypeA" />
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn prefWidth="240.0" text="Number of Deadlocks type a">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="typeADeadlocks" />
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn prefWidth="240.0" text="Average Duration of Type B Users">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="avgDurationTypeB" />
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn prefWidth="240.0" text="Number of Deadlocks type b">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="typeBDeadlocks" />
+                                </cellValueFactory>
+                            </TableColumn>
                         </columns>
                     </TableView>
 
                     <Label text="REPEATABLE READ" style="-fx-font-weight: bold;"/>
                     <TableView fx:id="repeatableReadTable" VBox.vgrow="ALWAYS">
                         <columns>
-                            <TableColumn prefWidth="240.0" text="Number of Type A Users"/>
-                            <TableColumn prefWidth="240.0" text="Number of Type B Users"/>
-                            <TableColumn prefWidth="240.0" text="Average Duration of Type A Users"/>
-                            <TableColumn prefWidth="240.0" text="Number of Deadlocks type a"/>
-                            <TableColumn prefWidth="240.0" text="Average Duration of Type B Users"/>
-                            <TableColumn prefWidth="240.0" text="Number of Deadlocks type b"/>
+                            <TableColumn prefWidth="240.0" text="Number of Type A Users">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="typeAUsers" />
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn prefWidth="240.0" text="Number of Type B Users">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="typeBUsers" />
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn prefWidth="240.0" text="Average Duration of Type A Users">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="avgDurationTypeA" />
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn prefWidth="240.0" text="Number of Deadlocks type a">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="typeADeadlocks" />
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn prefWidth="240.0" text="Average Duration of Type B Users">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="avgDurationTypeB" />
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn prefWidth="240.0" text="Number of Deadlocks type b">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="typeBDeadlocks" />
+                                </cellValueFactory>
+                            </TableColumn>
                         </columns>
                     </TableView>
 
                     <Label text="SERIALIZABLE" style="-fx-font-weight: bold;"/>
                     <TableView fx:id="serializableTable" VBox.vgrow="ALWAYS">
                         <columns>
-                            <TableColumn prefWidth="240.0" text="Number of Type A Users"/>
-                            <TableColumn prefWidth="240.0" text="Number of Type B Users"/>
-                            <TableColumn prefWidth="240.0" text="Average Duration of Type A Users"/>
-                            <TableColumn prefWidth="240.0" text="Number of Deadlocks type a"/>
-                            <TableColumn prefWidth="240.0" text="Average Duration of Type B Users"/>
-                            <TableColumn prefWidth="240.0" text="Number of Deadlocks type b"/>
+                            <TableColumn prefWidth="240.0" text="Number of Type A Users">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="typeAUsers" />
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn prefWidth="240.0" text="Number of Type B Users">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="typeBUsers" />
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn prefWidth="240.0" text="Average Duration of Type A Users">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="avgDurationTypeA" />
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn prefWidth="240.0" text="Number of Deadlocks type a">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="typeADeadlocks" />
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn prefWidth="240.0" text="Average Duration of Type B Users">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="avgDurationTypeB" />
+                                </cellValueFactory>
+                            </TableColumn>
+                            <TableColumn prefWidth="240.0" text="Number of Deadlocks type b">
+                                <cellValueFactory>
+                                    <PropertyValueFactory property="typeBDeadlocks" />
+                                </cellValueFactory>
+                            </TableColumn>
                         </columns>
                     </TableView>
                 </VBox>
