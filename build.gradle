@@ -39,11 +39,11 @@ dependencies {
   implementation('com.dlsc.formsfx:formsfx-core:11.6.0') {
     exclude(group: 'org.openjfx')
   }
+  implementation 'com.microsoft.sqlserver:mssql-jdbc:9.4.0.jre11'
   implementation('net.synedra:validatorfx:0.4.0') {
     exclude(group: 'org.openjfx')
   }
   implementation('org.kordamp.ikonli:ikonli-javafx:12.3.1')
-
   testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
   testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
 }

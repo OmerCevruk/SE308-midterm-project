@@ -11,7 +11,7 @@
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.BorderPane?>
 
-<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane fx:controller="com.dbcourse.dbproject.MainView" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
     <center>
         <ScrollPane fitToWidth="true" fitToHeight="true">
             <VBox VBox.vgrow = "ALWAYS">
@@ -23,7 +23,7 @@
                     <TextField fx:id="typeBUser" prefWidth="100.0" promptText="Type B User"/>
                     <Label text="Repetition Count:"/>
                     <TextField fx:id="repetitionCount" prefWidth="60.0" promptText="Count"/>
-                    <Button fx:id="Run" text="Run" onAction="runButtonClick"/>
+                    <Button fx:id="Run" text="Run" onAction="#runButtonClick"/>
                 </HBox>
                 <VBox spacing="10.0" fillWidth="true">
                     <!-- Labels for each TableView -->

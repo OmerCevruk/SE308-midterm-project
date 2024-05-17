@@ -1,10 +1,12 @@
 package com.dbcourse.dbproject;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-
+import javafx.scene.control.Dialog;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -17,36 +19,15 @@ public class MainView {
     private TableView<ResultData> resultTable;
 
     @FXML
-    private void initialize() {
-        TableColumn<ResultData, Integer> typeAUsersCol = new TableColumn<>("Number of Type A Users");
-        typeAUsersCol.setCellValueFactory(new PropertyValueFactory<>("typeAUsers"));
+    private Button Run;
 
-        TableColumn<ResultData, Integer> typeBUsersCol = new TableColumn<>("Number of Type B Users");
-        typeBUsersCol.setCellValueFactory(new PropertyValueFactory<>("typeBUsers"));
-
-        TableColumn<ResultData, Double> typeADeadlocksCol = new TableColumn<>("Duration of Deadlocks (Type A)");
-        typeADeadlocksCol.setCellValueFactory(new PropertyValueFactory<>("typeADeadlocks"));
-
-        TableColumn<ResultData, Double> typeBDeadlocksCol = new TableColumn<>("Duration of Deadlocks (Type B)");
-        typeBDeadlocksCol.setCellValueFactory(new PropertyValueFactory<>("typeBDeadlocks"));
-
-        TableColumn<ResultData, Integer> typeAThreadsCol = new TableColumn<>("Type A Threads Encountered by Type B Users");
-        typeAThreadsCol.setCellValueFactory(new PropertyValueFactory<>("typeAThreads"));
-
-        TableColumn<ResultData, Integer> typeBThreadsCol = new TableColumn<>("Type B Threads Encountered by Type A Users");
-        typeBThreadsCol.setCellValueFactory(new PropertyValueFactory<>("typeBThreads"));
-
-        TableColumn<ResultData, Double> avgDurationTypeACol = new TableColumn<>("Average Duration of Type A Users");
-        avgDurationTypeACol.setCellValueFactory(new PropertyValueFactory<>("avgDurationTypeA"));
-
-        TableColumn<ResultData, Double> avgDurationTypeBCol = new TableColumn<>("Average Duration of Type B Users");
-        avgDurationTypeBCol.setCellValueFactory(new PropertyValueFactory<>("avgDurationTypeB"));
-
-        resultTable.getColumns().addAll(typeAUsersCol, typeBUsersCol, typeADeadlocksCol, typeBDeadlocksCol,
-                typeAThreadsCol, typeBThreadsCol, avgDurationTypeACol, avgDurationTypeBCol);
-
-        // Load data from the database and set it to the table
-        loadDataFromDatabase();
+    @FXML
+    private void runButtonClick(ActionEvent event) {
+        // Open dialog
+        Dialog<String> dialog = new Dialog<>();
+        dialog.setTitle("Run Dialog");
+        dialog.setContentText("This is a dialog opened when the Run button is clicked.");
+        dialog.showAndWait();
     }
 
     private void loadDataFromDatabase() {

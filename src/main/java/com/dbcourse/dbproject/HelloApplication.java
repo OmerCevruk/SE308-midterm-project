@@ -1,5 +1,4 @@
 package com.dbcourse.dbproject;
-
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
