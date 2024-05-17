@@ -8,30 +8,74 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.layout.Priority?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.BorderPane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
-    <children>
-        <VBox spacing="10.0" fillWidth="true">
-            <HBox spacing="10.0" alignment="CENTER_LEFT">
-                <Label text="Type A User:"/>
-                <TextField fx:id="typeAUser" prefWidth="100.0" promptText="Type A User"/>
-                <Label text="Type B User:"/>
-                <TextField fx:id="typeBUser" prefWidth="100.0" promptText="Type B User"/>
-                <Label text="Repetition Count:"/>
-                <TextField fx:id="repetitionCount" prefWidth="60.0" promptText="Count"/>
-                <Button text="Run"/>
-            </HBox>
-            <TableView VBox.vgrow="ALWAYS">
-                <columns>
-                    <TableColumn prefWidth="240.0" text="Number of Type A Users"/>
-                    <TableColumn prefWidth="240.0" text="Number of Type B Users"/>
-                    <TableColumn prefWidth="240.0" text="Average Duration of Type A Users"/>
-                    <TableColumn prefWidth="240.0" text="Number of Deadlocks type a"/>
-                    <TableColumn prefWidth="240.0" text="Average Duration of Type B Users"/>
-                    <TableColumn prefWidth="240.0" text="Number of Deadlocks type b"/>
-                </columns>
-            </TableView>
-        </VBox>
-    </children>
-</AnchorPane>
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+    <center>
+        <ScrollPane fitToWidth="true" fitToHeight="true">
+            <VBox VBox.vgrow = "ALWAYS">
+                <!-- Input fields and button -->
+                <HBox spacing="10.0" alignment="CENTER_LEFT">
+                    <Label text="Type A User:"/>
+                    <TextField fx:id="typeAUser" prefWidth="100.0" promptText="Type A User"/>
+                    <Label text="Type B User:"/>
+                    <TextField fx:id="typeBUser" prefWidth="100.0" promptText="Type B User"/>
+                    <Label text="Repetition Count:"/>
+                    <TextField fx:id="repetitionCount" prefWidth="60.0" promptText="Count"/>
+                    <Button fx:id="Run" text="Run" onAction="runButtonClick"/>
+                </HBox>
+                <VBox spacing="10.0" fillWidth="true">
+                    <!-- Labels for each TableView -->
+                    <Label text="READ UNCOMMITTED" style="-fx-font-weight: bold;"/>
+                    <TableView fx:id="readUncommittedTable" VBox.vgrow="ALWAYS">
+                        <columns>
+                            <TableColumn prefWidth="240.0" text="Number of Type A Users"/>
+                            <TableColumn prefWidth="240.0" text="Number of Type B Users"/>
+                            <TableColumn prefWidth="240.0" text="Average Duration of Type A Users"/>
+                            <TableColumn prefWidth="240.0" text="Number of Deadlocks type a"/>
+                            <TableColumn prefWidth="240.0" text="Average Duration of Type B Users"/>
+                            <TableColumn prefWidth="240.0" text="Number of Deadlocks type b"/>
+                        </columns>
+                    </TableView>
+
+                    <Label text="READ COMMITTED" style="-fx-font-weight: bold;"/>
+                    <TableView fx:id="readCommittedTable" VBox.vgrow="ALWAYS">
+                        <columns>
+                            <TableColumn prefWidth="240.0" text="Number of Type A Users"/>
+                            <TableColumn prefWidth="240.0" text="Number of Type B Users"/>
+                            <TableColumn prefWidth="240.0" text="Average Duration of Type A Users"/>
+                            <TableColumn prefWidth="240.0" text="Number of Deadlocks type a"/>
+                            <TableColumn prefWidth="240.0" text="Average Duration of Type B Users"/>
+                            <TableColumn prefWidth="240.0" text="Number of Deadlocks type b"/>
+                        </columns>
+                    </TableView>
+
+                    <Label text="REPEATABLE READ" style="-fx-font-weight: bold;"/>
+                    <TableView fx:id="repeatableReadTable" VBox.vgrow="ALWAYS">
+                        <columns>
+                            <TableColumn prefWidth="240.0" text="Number of Type A Users"/>
+                            <TableColumn prefWidth="240.0" text="Number of Type B Users"/>
+                            <TableColumn prefWidth="240.0" text="Average Duration of Type A Users"/>
+                            <TableColumn prefWidth="240.0" text="Number of Deadlocks type a"/>
+                            <TableColumn prefWidth="240.0" text="Average Duration of Type B Users"/>
+                            <TableColumn prefWidth="240.0" text="Number of Deadlocks type b"/>
+                        </columns>
+                    </TableView>
+
+                    <Label text="SERIALIZABLE" style="-fx-font-weight: bold;"/>
+                    <TableView fx:id="serializableTable" VBox.vgrow="ALWAYS">
+                        <columns>
+                            <TableColumn prefWidth="240.0" text="Number of Type A Users"/>
+                            <TableColumn prefWidth="240.0" text="Number of Type B Users"/>
+                            <TableColumn prefWidth="240.0" text="Average Duration of Type A Users"/>
+                            <TableColumn prefWidth="240.0" text="Number of Deadlocks type a"/>
+                            <TableColumn prefWidth="240.0" text="Average Duration of Type B Users"/>
+                            <TableColumn prefWidth="240.0" text="Number of Deadlocks type b"/>
+                        </columns>
+                    </TableView>
+                </VBox>
+            </VBox>
+        </ScrollPane>
+    </center>
+</BorderPane>
