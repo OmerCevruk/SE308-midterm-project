@@ -29,7 +29,6 @@
                     <TextField fx:id="typeBUser" prefWidth="100.0" promptText="Type B User"/>
                     <Label text="isolation level:"/>
                     <ChoiceBox fx:id="isolationLevel"/>
-                    <Label text="Repetition Count:"/>
                     <Button fx:id="Run" text="Run" onAction="#runButtonClick"/>
 
                 </HBox>
