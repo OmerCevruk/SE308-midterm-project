@@ -3,14 +3,13 @@ import java.sql.*;
 import java.time.LocalDate;
 import java.util.Random;
 
-public class typeAUser implements user{
+public class typeAUser implements User {
 
     @Override
-    public long transaction(int isolationLevel) throws SQLException {
-        //start clock
+    public double transaction(int isolationLevel) throws SQLException {
+        //start timer
         long beginTime = System.currentTimeMillis();
 
-        // create connection and rand
         Random rand = new Random();
         for (int i = 0; i < 100; i++) {
             // Connect to database
@@ -18,8 +17,6 @@ public class typeAUser implements user{
             // Set transaction isolation level
             conn.setTransactionIsolation(isolationLevel);
             conn.setAutoCommit(false);
-            // Begin transaction
-
 
             int randomValue = rand.nextInt(2);
             if (randomValue < 0.5) {
@@ -38,15 +35,14 @@ public class typeAUser implements user{
                 updateQuery(conn, LocalDate.parse("2015-01-01"), LocalDate.parse("2015-12-31"));
             }
 
-            // Commit transaction
             conn.commit();
-
-            // Disconnect from database
             conn.close();
         }
-        
-        return 0;
+        //end timer
+        long endTime = System.currentTimeMillis();
+        double elapsedTime = (endTime - beginTime) / 1000.0; // convert milliseconds to seconds
 
+        return elapsedTime;
     }
     private static void updateQuery(Connection conn, LocalDate beginDate, LocalDate endDate) throws SQLException {
         PreparedStatement pstmt = conn.prepareStatement("UPDATE Sales.SalesOrderDetail" +

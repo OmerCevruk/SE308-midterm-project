@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4212c10b-46d8-4130-9548-f1a11cbff44b" name="Changes" comment="solved how to add rows to tableview">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dbcourse/dbproject/QueryService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dbcourse/dbproject/UpdateQuery.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dbcourse/dbproject/typeAUser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dbcourse/dbproject/user.java" afterDir="false" />
+    <list default="true" id="4212c10b-46d8-4130-9548-f1a11cbff44b" name="Changes" comment="type a user">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dbcourse/dbproject/TransactionRunner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dbcourse/dbproject/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dbcourse/dbproject/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dbcourse/dbproject/typeAUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dbcourse/dbproject/typeAUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dbcourse/dbproject/user.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dbcourse/dbproject/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,8 +26,8 @@
       <list>
         <option value="FxmlFile" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -159,7 +159,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715984317016</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="type a user">
+      <option name="closed" value="true" />
+      <created>1716126866653</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1716126866653</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -168,7 +176,8 @@
     <MESSAGE value="bişiler" />
     <MESSAGE value="obamna" />
     <MESSAGE value="solved how to add rows to tableview" />
-    <option name="LAST_COMMIT_MESSAGE" value="solved how to add rows to tableview" />
+    <MESSAGE value="type a user" />
+    <option name="LAST_COMMIT_MESSAGE" value="type a user" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
