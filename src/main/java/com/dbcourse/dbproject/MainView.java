@@ -14,10 +14,10 @@ import java.util.ResourceBundle;
 public class MainView implements Initializable {
     @FXML
     private TableView<ResultData> readUncommittedTable;
-    ObservableList<ResultData> readUncommitedData = FXCollections.observableArrayList();
+    ObservableList<ResultData> readUncommittedData = FXCollections.observableArrayList();
     @FXML
     private TableView<ResultData> readCommittedTable;
-    ObservableList<ResultData> readCommitedData = FXCollections.observableArrayList();
+    ObservableList<ResultData> readCommittedData = FXCollections.observableArrayList();
     @FXML
     private TableView<ResultData> repeatableReadTable;
     ObservableList<ResultData> repeatableReadData = FXCollections.observableArrayList();
@@ -26,45 +26,58 @@ public class MainView implements Initializable {
     ObservableList<ResultData> serializableData = FXCollections.observableArrayList();
 
     @FXML
-    private Button Run;
+    private Button runButton;
 
     @FXML
     private void runButtonClick(ActionEvent event) {
         // Open dialog
-        readUncommitedData.add(randomData());
-        readCommitedData.add(randomData());
-        repeatableReadData.add(randomData());
-        serializableData.add(randomData());
+        UserInputDialog userInputDialog = new UserInputDialog();
+        if (userInputDialog.showAndWait()) {
+            int typeAUsers = userInputDialog.getTypeAUsers();
+            int typeBUsers = userInputDialog.getTypeBUsers();
+
+            // Assuming TransactionRunner has a static method runSimulations(int typeAUsers, int typeBUsers)
+            try {
+                TransactionRunner.runSimulations(typeAUsers, typeBUsers);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
+            // Update the tables with placeholder data (this should be replaced with actual results from the simulations)
+            readUncommittedData.add(randomData(typeAUsers, typeBUsers));
+            readCommittedData.add(randomData(typeAUsers, typeBUsers));
+            repeatableReadData.add(randomData(typeAUsers, typeBUsers));
+            serializableData.add(randomData(typeAUsers, typeBUsers));
+        }
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         // Initialize ObservableList
-
-        readUncommitedData = FXCollections.observableArrayList();
-        readCommitedData = FXCollections.observableArrayList();
+        readUncommittedData = FXCollections.observableArrayList();
+        readCommittedData = FXCollections.observableArrayList();
         repeatableReadData = FXCollections.observableArrayList();
         serializableData = FXCollections.observableArrayList();
+
         // Set items to TableView
-        readUncommittedTable.setItems(readUncommitedData);
-        readCommittedTable.setItems(readCommitedData);
+        readUncommittedTable.setItems(readUncommittedData);
+        readCommittedTable.setItems(readCommittedData);
         repeatableReadTable.setItems(repeatableReadData);
         serializableTable.setItems(serializableData);
     }
 
-    private ResultData randomData(){
-            // Generate random values
-            int typeAUsers = (int) (Math.random() * 100);
-            int typeBUsers = (int) (Math.random() * 100);
-            double typeADeadlocks = Math.random() * 10;
-            double typeBDeadlocks = Math.random() * 10;
-            double avgDurationTypeA = Math.random() * 100;
-            double avgDurationTypeB = Math.random() * 100;
+    private ResultData randomData(int typeAUsers, int typeBUsers) {
+        // Generate random values
+        double typeADeadlocks = Math.random() * 10;
+        double typeBDeadlocks = Math.random() * 10;
+        double avgDurationTypeA = Math.random() * 100;
+        double avgDurationTypeB = Math.random() * 100;
 
-            // Create a ResultData object with the random values
-            ResultData randomData = new ResultData(typeAUsers, typeBUsers, typeADeadlocks, typeBDeadlocks, avgDurationTypeA, avgDurationTypeB);
-            return randomData;
+        // Create a ResultData object with the random values
+        return new ResultData(typeAUsers, typeBUsers, typeADeadlocks, typeBDeadlocks, avgDurationTypeA, avgDurationTypeB);
     }
+}
+
 //    private void loadDataFromDatabase() {
 //        List<ResultData> results = new ArrayList<>();
 //        String query = "SELECT * FROM YourTable"; // Update with your actual query
