@@ -3,7 +3,7 @@ import java.sql.*;
 import java.time.LocalDate;
 import java.util.Random;
 
-public class typeBUser implements User {
+public class TypeBUser implements User {
 
     @Override
     public double transaction(int isolationLevel) throws SQLException {

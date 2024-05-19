@@ -1,92 +1,58 @@
 package com.dbcourse.dbproject;
 
 import java.sql.Connection;
-import java.sql.SQLException;
+import java.util.Vector;
 
-public class TransactionRunner {
-    public static void runTransactions(User userA, User userB) throws InterruptedException {
-        Thread threadUserA1 = new Thread(() -> {
-            try {
-                userA.transaction(Connection.TRANSACTION_READ_COMMITTED);
-            } catch (SQLException e) {
-                System.out.println("Error running transaction for user A 1: " + e.getMessage());
-            }
-        });
+public class TransactionRunner{
+    User userA = new TypeAUser();
+    User userB = new TypeBUser();
+    int Acount;
+    int Bcount;
 
-        Thread threadUserA2 = new Thread(() -> {
-            try {
-                userA.transaction(Connection.TRANSACTION_READ_UNCOMMITTED);
-            } catch (SQLException e) {
-                System.out.println("Error running transaction for user A 2: " + e.getMessage());
-            }
-        });
+    public double averageBTime = 0;
+    public double averageATime = 0;
 
-        Thread threadUserA3 = new Thread(() -> {
-            try {
-                userA.transaction(Connection.TRANSACTION_REPEATABLE_READ);
-            } catch (SQLException e) {
-                System.out.println("Error running transaction for user B 1: " + e.getMessage());
-            }
-        });
+    double averageRunTime;
+    Vector<Thread> threads = new Vector<>();
+    public int aDeadlocksCount;
+    public int bDeadlocksCount;
+    int isolationLevel;
 
-        Thread threadUserA4 = new Thread(() -> {
-            try {
-                userA.transaction(Connection.TRANSACTION_SERIALIZABLE);
-            } catch (SQLException e) {
-                System.out.println("Error running transaction for user B 2: " + e.getMessage());
-            }
-        });
-
-        Thread threadUserB1 = new Thread(() -> {
-            try {
-                userB.transaction(Connection.TRANSACTION_READ_COMMITTED);
-            } catch (SQLException e) {
-                System.out.println("Error running transaction for user A 1: " + e.getMessage());
-            }
-        });
-
-        Thread threadUserB2 = new Thread(() -> {
-            try {
-                userB.transaction(Connection.TRANSACTION_READ_UNCOMMITTED);
-            } catch (SQLException e) {
-                System.out.println("Error running transaction for user A 2: " + e.getMessage());
-            }
-        });
-
-        Thread threadUserB3 = new Thread(() -> {
-            try {
-                userB.transaction(Connection.TRANSACTION_REPEATABLE_READ);
-            } catch (SQLException e) {
-                System.out.println("Error running transaction for user B 1: " + e.getMessage());
-            }
-        });
-
-        Thread threadUserB4 = new Thread(() -> {
-            try {
-                userB.transaction(Connection.TRANSACTION_SERIALIZABLE);
-            } catch (SQLException e) {
-                System.out.println("Error running transaction for user B 2: " + e.getMessage());
-            }
-        });
-
-        threadUserA1.start();
-        threadUserA2.start();
-        threadUserA3.start();
-        threadUserA4.start();
-        threadUserB1.start();
-        threadUserB2.start();
-        threadUserB3.start();
-        threadUserB4.start();
-
-        // Wait for all threads to finish
-        threadUserA1.join();
-        threadUserA2.join();
-        threadUserA3.join();
-        threadUserA4.join();
-
-        threadUserB1.join();
-        threadUserB2.join();
-        threadUserB3.join();
-        threadUserB4.join();
+    public TransactionRunner(int Acount, int Bcount,int isolationLevel){
+        this.Acount = Acount;
+        this.Bcount = Bcount;
+        this.isolationLevel = isolationLevel;
     }
+
+    public void run(){
+        for (int i = 0; i < this.Acount; i++) {
+            threads.add(new ThreadUserA(userA, isolationLevel ));
+            threads.add(new ThreadUserB(userB, isolationLevel));
+        }
+
+        for(Thread thread : threads){
+            thread.start();
+        }
+
+        // Wait for each thread to finish
+        for(Thread thread : threads) {
+            try {
+                thread.join();
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
+        }
+
+        averageATime = ThreadUserA.totalTime/Acount;
+        averageBTime = ThreadUserB.totalTime/Acount;
+        aDeadlocksCount = ThreadUserA.deadlocksCount;
+        bDeadlocksCount = ThreadUserB.deadlocksCount;
+        ThreadUserA.totalTime = 0;
+        ThreadUserB.totalTime = 0;
+        ThreadUserA.deadlocksCount = 0;
+        ThreadUserB.deadlocksCount = 0;
+
+    }
+
+
 }

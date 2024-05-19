@@ -14,19 +14,24 @@
 <?import javafx.scene.control.cell.TextFieldTableCell?>
 
 
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
 <BorderPane fx:controller="com.dbcourse.dbproject.MainView" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
     <center>
-        <ScrollPane fitToWidth="true" fitToHeight="true">
-            <VBox>
+        <ScrollPane fitToWidth="true" fitToHeight="true" >
+            <VBox spacing="10.0">
                 <!-- Input fields and button -->
                 <HBox spacing="10.0" alignment="CENTER_LEFT">
                     <Label text="Type A User:"/>
                     <TextField fx:id="typeAUser" prefWidth="100.0" promptText="Type A User"/>
                     <Label text="Type B User:"/>
                     <TextField fx:id="typeBUser" prefWidth="100.0" promptText="Type B User"/>
+                    <Label text="isolation level:"/>
+                    <ChoiceBox fx:id="isolationLevel"/>
                     <Label text="Repetition Count:"/>
-                    <TextField fx:id="repetitionCount" prefWidth="60.0" promptText="Count"/>
                     <Button fx:id="Run" text="Run" onAction="#runButtonClick"/>
+
                 </HBox>
                 <VBox spacing="10.0" fillWidth="true">
                     <!-- Labels for each TableView -->
