@@ -26,8 +26,9 @@ public class TransactionRunner{
 
     public void run(){
         for (int i = 0; i < this.Acount; i++) {
-            threads.add(new ThreadUserA(userA, isolationLevel ));
             threads.add(new ThreadUserB(userB, isolationLevel));
+            threads.add(new ThreadUserA(userA, isolationLevel ));
+
         }
 
         for(Thread thread : threads){
