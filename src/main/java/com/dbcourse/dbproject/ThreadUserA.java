@@ -4,7 +4,7 @@ import java.sql.SQLException;
 import java.util.concurrent.Semaphore;
 
 public class ThreadUserA extends Thread{
-    Semaphore semaphore = new Semaphore(1);
+    private static final Semaphore semaphore = new Semaphore(1);
     User user;
     public static double totalTime;
     public static int deadlocksCount;
@@ -16,6 +16,7 @@ public class ThreadUserA extends Thread{
     public void setIsolationLevel(int isolationLevel) {
         this.isolationLevel = isolationLevel;
     }
+
     int isolationLevel;
     public ThreadUserA(User user, int isolationLevel){
         this.isolationLevel = isolationLevel;
@@ -23,6 +24,7 @@ public class ThreadUserA extends Thread{
     }
 
     public void run(){
+
         try {
             //runs the transaction and counts deadlocks
             double time = user.transaction(this.isolationLevel);

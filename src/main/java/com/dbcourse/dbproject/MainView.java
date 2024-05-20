@@ -46,8 +46,8 @@ public class MainView implements Initializable {
 
     @FXML
     private void runButtonClick(ActionEvent event) {
-        int numA = Integer.parseInt(typeAUser.getText());
-        int numB = Integer.parseInt(typeBUser.getText());
+        long numA = Integer.parseInt(typeAUser.getText());
+        long numB = Integer.parseInt(typeBUser.getText());
         String selectedIsolationLevel = isolationLevel.getValue();
 
         //ugly looking if else block does the job

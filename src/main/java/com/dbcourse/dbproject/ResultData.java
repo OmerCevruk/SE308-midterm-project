@@ -2,17 +2,17 @@ package com.dbcourse.dbproject;
 import javafx.beans.property.*;
 //TODO remove un necessary properties
 public class ResultData {
-    private final IntegerProperty typeAUsers;
-    private final IntegerProperty typeBUsers;
+    private final LongProperty typeAUsers;
+    private final LongProperty typeBUsers;
     private final DoubleProperty typeADeadlocks;
     private final DoubleProperty typeBDeadlocks;
     private final DoubleProperty avgDurationTypeA;
     private final DoubleProperty avgDurationTypeB;
 
-    public ResultData(int typeAUsers, int typeBUsers, double typeADeadlocks, double typeBDeadlocks,
-                     double avgDurationTypeA, double avgDurationTypeB) {
-        this.typeAUsers = new SimpleIntegerProperty(typeAUsers);
-        this.typeBUsers = new SimpleIntegerProperty(typeBUsers);
+    public ResultData(long typeAUsers, long typeBUsers, double typeADeadlocks, double typeBDeadlocks,
+                      double avgDurationTypeA, double avgDurationTypeB) {
+        this.typeAUsers = new SimpleLongProperty(typeAUsers);
+        this.typeBUsers = new SimpleLongProperty(typeBUsers);
         this.typeADeadlocks = new SimpleDoubleProperty(typeADeadlocks);
         this.typeBDeadlocks = new SimpleDoubleProperty(typeBDeadlocks);
 
@@ -21,11 +21,11 @@ public class ResultData {
     }
 
     // Getters
-    public int getTypeAUsers() {
+    public long getTypeAUsers() {
         return typeAUsers.get();
     }
 
-    public int getTypeBUsers() {
+    public long getTypeBUsers() {
         return typeBUsers.get();
     }
 

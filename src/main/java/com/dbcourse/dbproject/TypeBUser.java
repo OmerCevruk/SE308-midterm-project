@@ -56,15 +56,6 @@ public class TypeBUser implements User {
         pstmt.setDate(2, Date.valueOf(endDate));
 
         ResultSet rs = pstmt.executeQuery();
-        while (rs.next()) {
-            // Fetch data from ResultSet if needed
-            int salesOrderID = rs.getInt("SalesOrderID");
-            Date orderDate = rs.getDate("OrderDate");
-            boolean onlineOrderFlag = rs.getBoolean("OnlineOrderFlag");
-
-            // For this simulation, we are not doing anything with the fetched data.
-            // You can add logic here if needed.
-        }
         rs.close();
         pstmt.close();
     }

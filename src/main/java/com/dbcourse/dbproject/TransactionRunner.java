@@ -1,13 +1,12 @@
 package com.dbcourse.dbproject;
 
-import java.sql.Connection;
 import java.util.Vector;
 
 public class TransactionRunner{
     User userA = new TypeAUser();
     User userB = new TypeBUser();
-    int Acount;
-    int Bcount;
+    long Acount;
+    long Bcount;
 
     public double averageBTime = 0;
     public double averageATime = 0;
@@ -18,7 +17,7 @@ public class TransactionRunner{
     public int bDeadlocksCount;
     int isolationLevel;
 
-    public TransactionRunner(int Acount, int Bcount,int isolationLevel){
+    public TransactionRunner(long Acount, long Bcount, int isolationLevel){
         this.Acount = Acount;
         this.Bcount = Bcount;
         this.isolationLevel = isolationLevel;
@@ -28,7 +27,6 @@ public class TransactionRunner{
         for (int i = 0; i < this.Acount; i++) {
             threads.add(new ThreadUserB(userB, isolationLevel));
             threads.add(new ThreadUserA(userA, isolationLevel ));
-
         }
 
         for(Thread thread : threads){
@@ -41,6 +39,7 @@ public class TransactionRunner{
                 thread.join();
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
+                System.out.println("Thread Interrupt----------------------------------------------------------------");
             }
         }
         // set the values that are open to other classes
