@@ -3,7 +3,7 @@ package com.dbcourse.dbproject;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-
+//this class makes connection simpler
 public class DatabaseConnection {
     private static final String URL = "jdbc:sqlserver://localhost:1433;databaseName=AdventureWorks";
     private static final String USER = "sa";

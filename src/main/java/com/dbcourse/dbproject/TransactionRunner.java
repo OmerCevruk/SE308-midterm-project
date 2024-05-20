@@ -42,11 +42,13 @@ public class TransactionRunner{
                 Thread.currentThread().interrupt();
             }
         }
-
+        // set the values that are open to other classes
         averageATime = ThreadUserA.totalTime/Acount;
         averageBTime = ThreadUserB.totalTime/Acount;
         aDeadlocksCount = ThreadUserA.deadlocksCount;
         bDeadlocksCount = ThreadUserB.deadlocksCount;
+
+        //reset static variables to zero so it does not build up
         ThreadUserA.totalTime = 0;
         ThreadUserB.totalTime = 0;
         ThreadUserA.deadlocksCount = 0;

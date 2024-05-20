@@ -49,6 +49,8 @@ public class MainView implements Initializable {
         int numA = Integer.parseInt(typeAUser.getText());
         int numB = Integer.parseInt(typeBUser.getText());
         String selectedIsolationLevel = isolationLevel.getValue();
+
+        //ugly looking if else block does the job
         if (selectedIsolationLevel.equals("SERIALIZABLE")) {
             TransactionRunner runner = new TransactionRunner(numA,numB,Connection.TRANSACTION_SERIALIZABLE);
             runner.run();
@@ -72,6 +74,7 @@ public class MainView implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
         // Initialize ObservableList
         readUncommittedData = FXCollections.observableArrayList();
         readCommittedData = FXCollections.observableArrayList();
@@ -89,6 +92,7 @@ public class MainView implements Initializable {
         isolationLevels.add("REPEATABLE READ");
         isolationLevels.add("READ UNCOMMITTED");
 
+        // set choice box
         isolationLevel.setItems(isolationLevels);
         isolationLevel.setDisable(false);
     }

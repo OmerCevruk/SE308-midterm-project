@@ -16,7 +16,6 @@ public class ThreadUserA extends Thread{
     public void setIsolationLevel(int isolationLevel) {
         this.isolationLevel = isolationLevel;
     }
-
     int isolationLevel;
     public ThreadUserA(User user, int isolationLevel){
         this.isolationLevel = isolationLevel;
@@ -25,6 +24,7 @@ public class ThreadUserA extends Thread{
 
     public void run(){
         try {
+            //runs the transaction and counts deadlocks
             double time = user.transaction(this.isolationLevel);
             semaphore.acquire();
             totalTime += time;

@@ -24,6 +24,7 @@ public class ThreadUserB extends Thread{
     }
 
     public void run(){
+        //runs the transaction and counts deadlocks
         try {
             double time = user.transaction(this.isolationLevel);
             semaphore.acquire();

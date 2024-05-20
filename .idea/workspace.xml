@@ -4,15 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4212c10b-46d8-4130-9548-f1a11cbff44b" name="Changes" comment="TransactionRunner.java bişiler">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dbcourse/dbproject/ThreadUserA.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dbcourse/dbproject/ThreadUserB.java" afterDir="false" />
+    <list default="true" id="4212c10b-46d8-4130-9548-f1a11cbff44b" name="Changes" comment="Finish again">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/dbcourse/dbproject/MainView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dbcourse/dbproject/MainView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dbcourse/dbproject/ThreadUserA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dbcourse/dbproject/ThreadUserA.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dbcourse/dbproject/ThreadUserB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dbcourse/dbproject/ThreadUserB.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/dbcourse/dbproject/TransactionRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dbcourse/dbproject/TransactionRunner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dbcourse/dbproject/typeAUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dbcourse/dbproject/TypeAUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dbcourse/dbproject/typeBUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dbcourse/dbproject/TypeBUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/dbcourse/dbproject/MainView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/dbcourse/dbproject/MainView.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -208,7 +205,23 @@
       <option name="project" value="LOCAL" />
       <updated>1716129318366</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Finish">
+      <option name="closed" value="true" />
+      <created>1716160948534</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1716160948534</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Finish again">
+      <option name="closed" value="true" />
+      <created>1716160998621</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1716160998621</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -230,7 +243,9 @@
     <MESSAGE value="solved how to add rows to tableview" />
     <MESSAGE value="type a user" />
     <MESSAGE value="TransactionRunner.java bişiler" />
-    <option name="LAST_COMMIT_MESSAGE" value="TransactionRunner.java bişiler" />
+    <MESSAGE value="Finish" />
+    <MESSAGE value="Finish again" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finish again" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
